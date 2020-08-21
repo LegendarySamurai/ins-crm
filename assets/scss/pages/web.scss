@@ -23,7 +23,7 @@
 @import '../components/modules/custom-checkbox-ui';
 @import '../components/modules/decoration-elements';
 @import '../components/modules/form';
-@import '../components/modules/header';
+//@import '../components/modules/header';
 //@import '../components/modules/horizontal-scroll-wrapper';
 //@import '../components/modules/main-row';
 @import '../components/modules/search';
@@ -76,7 +76,7 @@ body {
     min-width: 250px;
     max-width: 250px;
     height: 100%;
-    background-image: linear-gradient(to bottom, #585077 71%, #696577);
+    background-image: linear-gradient(to bottom, #325181 71%, #696577);
     box-shadow: 0 1.5px 15px 0 rgba(0, 0, 0, 0.11);
     transition: transform 300ms ease;
   }
@@ -261,7 +261,6 @@ body {
   }
 
   .fixed-top-panel-d {
-    //z-index: 10;
     z-index: 210;
     position: fixed;
     top: 0;
@@ -314,7 +313,7 @@ body {
   .sub-menu-item {
     display: block;
     line-height: 1.25;
-    color: #585077;
+    color: #e98303;
     margin: 0 15px;
     padding: 10px 0 6px;
     white-space: nowrap;
@@ -332,7 +331,7 @@ body {
         height: 4px;
         display: block;
         content: '';
-        background-color: #585077;
+        background-color: #e98303;
       }
     }
 
@@ -348,7 +347,7 @@ body {
         height: 4px;
         display: block;
         content: '';
-        background-color: #585077;
+        background-color: #e98303;
       }
     }
 
@@ -403,7 +402,7 @@ body {
     i {
       margin-right: 8px;
       transition: all .2s ease;
-      color: #585077;
+      color: #e98303;
       font-weight: 300;
     }
 
@@ -440,7 +439,7 @@ body {
         padding: 10px 15px;
         list-style: none;
         font-size: 1rem;
-        color: #585077;
+        color: #e98303;
 
         &:hover {
           color: #16181b;
@@ -461,7 +460,7 @@ body {
         text-align: center;
         -webkit-transition: all .2s ease;
         transition: all .2s ease;
-        color: #585077;
+        color: #e98303;
         font-weight: 300;
       }
     }
@@ -477,7 +476,7 @@ body {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    color: #342e49;
+    color: #325181;
     font-family: "Lato", sans-serif;
     font-size: 8pt;
   }
@@ -537,14 +536,14 @@ body {
 
   .notification-1 {
     .index {
-      top: 0px;
+      top: 0;
       left: 7px;
     }
   }
 
   .notification-2 {
     .index {
-      top: 0px;
+      top: 0;
       right: 2px;
     }
   }
@@ -574,7 +573,7 @@ body {
         content: '';
         width: .1px;
         height: .1px;
-        border-bottom: 10px solid #585077;
+        border-bottom: 10px solid #325181;
         border-top: none;
         border-right: 6px solid transparent;
         border-left: 6px solid transparent;
@@ -616,7 +615,7 @@ body {
         align-items: center;
         height: 50px;
         padding-bottom: 10px;
-        background-color: #585077;
+        background-color: #325181;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         color: #fff;
@@ -713,7 +712,7 @@ body {
     width: auto;
     flex-grow: 1;
     margin-left: 6px;
-    color: #585077;
+    color: #325181;
   }
 
   .item-title {
@@ -762,7 +761,7 @@ body {
       .user {
         &.active {
           border-bottom-color: transparent;
-          background: #585077;
+          background: #e98303;
           box-shadow: 0 3px 4px 2px #f2f4f6;
           height: 100%;
 
@@ -843,7 +842,7 @@ body {
     flex-direction: column;
     line-height: 1.25;
     padding-right: 20px;
-    color: #585077;
+    color: #325181;
     cursor: pointer;
 
     &::after {
@@ -853,8 +852,8 @@ body {
       content: "";
       display: block;
       border-top: 1px solid transparent;
-      border-right: 1px solid #342e4a;
-      border-bottom: 1px solid #342e4a;
+      border-right: 1px solid #325181;
+      border-bottom: 1px solid #325181;
       border-left: 1px solid transparent;
       width: 8px;
       height: 8px;
@@ -877,7 +876,7 @@ body {
     height: 100%;
     border-bottom-left-radius: 100rem;
     border-bottom-right-radius: 100rem;
-    background-color: #585077;
+    background-color: #e98303;
     display: flex;
     align-items: flex-end;
     padding: 4px;
@@ -889,7 +888,7 @@ body {
       width: 56px;
       height: 56px;
       padding: 4px;
-      border: 1px solid white;
+      border: 1px solid #fff;
       border-radius: 50%;
     }
 
@@ -1032,7 +1031,7 @@ body {
 
   .custom-select {
     border-radius: 2.5px;
-    border: solid 0.5px #585077;
+    border: 1px solid #325181;
     background-color: transparent;
   }
 
@@ -1172,7 +1171,7 @@ body {
   width: 2rem;
   height: 2rem;
   vertical-align: text-bottom;
-  border: .25em solid currentColor;
+  border: .25em solid #325181;
   border-right-color: transparent;
   border-radius: 50%;
   -webkit-animation: spinner-border .75s linear infinite;

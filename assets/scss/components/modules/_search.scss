@@ -28,7 +28,7 @@
     width: auto;
     height: 100%;
     padding: 0 10px;
-    background-color: #585077;
+    background-color: #325181;
     color: #fff;
     font-weight: 300;
     font-size: 1rem;
@@ -59,11 +59,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    //right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    //width: 40px;
     height: 100%;
     width: 25px;
   }
@@ -76,30 +74,30 @@
     border: none;
     background-color: #e8e8e8;
     font-weight: 300;
-    color: #342e49;
+    color: #325181;
     font-size: 1rem;
 
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       font-weight: 300;
-      color: #342e49;
+      color: #325181;
       font-size: 1rem;
     }
 
     &::-moz-placeholder { /* Firefox 19+ */
       font-weight: 300;
-      color: #342e49;
+      color: #325181;
       font-size: 1rem;
     }
 
     &:-ms-input-placeholder { /* IE 10+ */
       font-weight: 300;
-      color: #342e49;
+      color: #325181;
       font-size: 1rem;
     }
 
     &:-moz-placeholder { /* Firefox 18- */
       font-weight: 300;
-      color: #342e49;
+      color: #325181;
       font-size: 1rem;
     }
   }

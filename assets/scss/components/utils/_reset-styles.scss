@@ -1,5 +1,5 @@
 a {
-  color: #585077;
+  color: #325181;
   text-decoration: none;
 }
 
@@ -30,6 +30,10 @@ button {
 button:focus {
   box-shadow: unset;
   outline: none !important;
+}
+
+[type="button"], [type="reset"], [type="submit"], button {
+  -webkit-appearance: none;
 }
 
 textarea:focus, input:focus, .checkbox {

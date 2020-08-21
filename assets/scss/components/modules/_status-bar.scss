@@ -3,7 +3,7 @@ body ::-webkit-scrollbar {
 }
 
 body ::-webkit-scrollbar-thumb {
-  background-color: #342e4a !important;
+  background-color: #325181 !important;
 }
 
 .status-bar-col {
@@ -44,7 +44,7 @@ body ::-webkit-scrollbar-thumb {
 
   .fa-times {
     font-size: 13pt;
-    color: #585077;
+    color: #325181;
   }
 }
 
@@ -57,20 +57,13 @@ body ::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: column;
   width: 100%;
-  //height: 100%;
   font-family: "Raleway", sans-serif;
-  color: #585077;
+  color: #325181;
 
   .status-bar-inner-container {
     .status-bar-inner-header {
       display: none;
     }
-  }
-
-  .status-bar-inner {
-    //position: sticky;
-    //bottom: 0;
-    //background-color: transparentize(coral, .5); // temp
   }
 
   .status-bar-inner-body {
@@ -133,7 +126,7 @@ body ::-webkit-scrollbar-thumb {
     height: 100%;
     padding: 0 5px;
     font-weight: 300;
-    color: #342e49;
+    color: #325181;
     cursor: pointer;
 
     &.active {
@@ -187,7 +180,7 @@ body ::-webkit-scrollbar-thumb {
       min-width: 150px;
       width: auto;
       font-weight: 300;
-      color: #342e49;
+      color: #325181;
 
       .date-divider {
         padding-left: 5px;
@@ -226,10 +219,10 @@ body ::-webkit-scrollbar-thumb {
     .custom-control-label {
       padding-left: 10px;
       font-weight: 300;
-      color: #585077;
+      color: #325181;
 
       &:before {
-        border-color: #585077;
+        border-color: #325181;
       }
     }
   }
@@ -289,7 +282,7 @@ body ::-webkit-scrollbar-thumb {
   width: 20px;
   height: 80px;
   color: #fff;
-  background-color: #585077;
+  background-color: #e98303;
   border-radius: 10px 0 0 10px;
   cursor: pointer;
 
@@ -301,12 +294,10 @@ body ::-webkit-scrollbar-thumb {
 
 // Additional class for .status-bar-col, when filter opened
 .filter-opened {
-  //position: relative;
   height: auto;
   align-self: flex-start;
   position: sticky;
   top: 100px;
-  //background-color: red;
   width: 300px;
 
   .status-bar-outer {
@@ -354,7 +345,7 @@ body ::-webkit-scrollbar-thumb {
   .button {
     margin-bottom: 30px;
     font-size: 12pt;
-    color: #443b67;
+    color: #e98303;
     cursor: pointer;
   }
 
@@ -437,7 +428,6 @@ body ::-webkit-scrollbar-thumb {
     position: relative;
 
     .status-bar {
-      //position: absolute;
       position: fixed;
       top: 110px;
       left: 0;
@@ -561,7 +551,6 @@ body ::-webkit-scrollbar-thumb {
 
 @media (max-width: 599px) {
   .status-bar-col {
-    //z-index: 202;
     position: relative;
     align-self: auto;
     margin-top: 0;
@@ -607,7 +596,7 @@ body ::-webkit-scrollbar-thumb {
       align-items: center;
       width: 74px;
       height: 30px;
-      background-color: #585077;
+      background-color: #325181;
       color: #fff;
       border: none;
       border-radius: 5px;

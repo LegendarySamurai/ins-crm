@@ -1,4 +1,8 @@
-﻿$primaryColer: #606060;
+﻿$main-orange: #e98303;
+$main-blue: #325181;
+
+/* ========= Old colors ============*/
+$primaryColer: #606060;
 
 $primaryTextColor: #342e4a;
 $primaryOpacityColor: rgba(52, 46, 74, 0.4);
@@ -31,65 +35,12 @@ $pinkish-grey: #d8cdba;
     white-space: nowrap;
 }
 
-.red {
-    color: #c30a0a;
-}
-
-.purple {
-    color: #585077;
-}
-
-.dark {
-    color: #342e49;
-}
-
 .font-w-300 {
     font-weight: 300;
 }
 
 .font-w-500 {
     font-weight: 500;
-}
-
-@mixin titleColor {
-    color: $primaryTextColor;
-    font-family: "Poppins", 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-    margin-bottom: 10px;
-    font-weight: 400;
-}
-
-@mixin positionCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-@mixin menuItemActive {
-    &:after {
-        display: block;
-        content: '';
-        width: 90%;
-        height: 4px;
-        background-color: #585077;
-        position: absolute;
-        bottom: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@mixin inputStyles {
-    height: 100%;
-    color: #585077;
-}
-
-@mixin placeholderFontSize {
-    font-size: 1.4rem;
 }
 
 // Display

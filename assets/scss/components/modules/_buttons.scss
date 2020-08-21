@@ -7,7 +7,7 @@
 }
 
 .b-btn-purple {
-  background-color: #585077;
+  background-color: #325181;
   border-radius: 4px;
   font-weight: 300;
   font-size: 9pt;
@@ -46,7 +46,7 @@
       align-items: center;
       width: 176px;
       height: 50px;
-      background-color: #585077;
+      background-color: #325181;
       color: #fff;
 
       .fa-long-arrow-right {
@@ -55,7 +55,7 @@
 
       &.active {
         flex-direction: row;
-        background-color: #585077;
+        background-color: #325181;
 
         .fa-long-arrow-right {
           transform: rotate(0);
