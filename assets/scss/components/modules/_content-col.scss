@@ -1,0 +1,51 @@
+// Search on the top of each page with title of page
+#content-search-input {
+  //z-index: 200;
+  z-index: 6;
+  position: sticky;
+  top: 92px;
+  align-items: flex-end;
+  width: calc(100% + 17px);
+  height: 60px;
+  margin-left: -15px;
+  //padding-left: 15px;
+  //padding-top: 20px;
+  background-color: #fff;
+
+
+  &.big-space {
+    top: 230px;
+  }
+
+  .title {
+    white-space: nowrap;
+
+  }
+
+  .input-group {
+    padding-left: 10px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 767px) {
+    top: 141px !important;
+    //width: 100% !important;
+    max-width: calc(100% - 60px - 15px) !important;
+  }
+}
+
+// Content right
+.content-col {
+  background-color: #fff;
+
+  @media(max-width: 991px) {
+
+  }
+
+  @media(max-width: 767px) {
+
+  }
+
+  @media(max-width: 599px) {
+
+  }
+}

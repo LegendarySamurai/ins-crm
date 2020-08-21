@@ -1,0 +1,58 @@
+.accordion-items {
+  //overflow-y: scroll;
+}
+
+.accordion-item {
+  width: 100%;
+
+  &:not(:first-child) {
+    margin-top: 6px;
+  }
+}
+
+@media(min-width: 300px) { // from 300
+  .accordion-item {
+    .card {
+      background-color: transparent;
+      box-shadow: none;
+
+      .card-header {
+        display: flex;
+        padding: 6px 0;
+        border-radius: 0;
+        border-bottom: 0;
+        background-color: #ebebeb;
+
+        .custom-control {
+          position: relative;
+          align-self: center;
+
+          .custom-control-label {
+            position: absolute;
+            top: 0;
+          }
+        }
+
+        .btn {
+          display: flex;
+          flex-direction: row;
+          flex-grow: 1;
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 0;
+
+          i { transform: rotate(180deg); }
+
+          &.collapsed {
+            i { transform: rotate(0deg); }
+          }
+
+          &:focus {
+            box-shadow: none;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

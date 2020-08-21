@@ -1,0 +1,107 @@
+// Search
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid #707070;
+  font-family: "Raleway", sans-serif;
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+  }
+
+  .controls-title {
+    display: none;
+  }
+
+  // New ticket btn
+  .new-ticket {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    padding: 0 10px;
+    background-color: #585077;
+    color: #fff;
+    font-weight: 300;
+    font-size: 1rem;
+    border: none;
+
+    .fa-plus-square {
+      margin-right: 10px;
+      font-size: 2rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // Input search
+  .input-group {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 380px;
+    height: 100%;
+  }
+
+  .input-group-prepend {
+    z-index: 6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //width: 40px;
+    height: 100%;
+    width: 25px;
+  }
+
+  .form-control {
+    height: 100%;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 20px;
+    border: none;
+    background-color: #e8e8e8;
+    font-weight: 300;
+    color: #342e49;
+    font-size: 1rem;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      font-weight: 300;
+      color: #342e49;
+      font-size: 1rem;
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+      font-weight: 300;
+      color: #342e49;
+      font-size: 1rem;
+    }
+
+    &:-ms-input-placeholder { /* IE 10+ */
+      font-weight: 300;
+      color: #342e49;
+      font-size: 1rem;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      font-weight: 300;
+      color: #342e49;
+      font-size: 1rem;
+    }
+  }
+}
+// EOL: Search

@@ -1,0 +1,336 @@
+@import '../utils/variables';
+
+/*
+styles for all forms on sign-in, sign-up, wiz pages etc. Created by Igor 10-15.02.20
+*/
+form {
+  font-family: "Raleway", sans-serif;
+
+  .input-group-select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input-group {
+    height: 68px;
+    border-radius: 2.5px;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+
+    .custom-select {
+      @include inputStyles;
+      height: 100%;
+      font-size: 1.4rem;
+
+      &::-webkit-input-placeholder {
+        @include inputStyles;
+        @include placeholderFontSize;
+        font-size: 1.4rem;
+      }
+      &::-moz-placeholder {
+        @include inputStyles;
+        @include placeholderFontSize;
+        font-size: 1.4rem;
+      }
+      &:-ms-input-placeholder {
+        @include inputStyles;
+        @include placeholderFontSize;
+        font-size: 1.4rem;
+      }
+    }
+
+    .form-control {
+      @include inputStyles;
+      font-size: 1.4rem;
+
+      &:focus {
+        border: 1px solid #ced4da;
+        border-radius: 2.5px;
+      }
+
+      &::-webkit-input-placeholder {
+        @include inputStyles;
+        @include placeholderFontSize;
+        font-size: 1.4rem;
+      }
+      &::-moz-placeholder {
+        @include inputStyles;
+        @include placeholderFontSize;
+        font-size: 1.4rem;
+      }
+      &:-ms-input-placeholder {
+        @include inputStyles;
+        @include placeholderFontSize;
+        font-size: 1.4rem;
+      }
+    }
+
+    .input-group-text {
+      @include inputStyles;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      background-color: transparent;
+      border-right: none;
+
+      &.input-group-aiqoo-text {
+        min-width: initial;
+      }
+
+      i, .far {
+        font-size: 1.5rem;
+      }
+
+      //&:after {
+      //  display: block;
+      //  content: '';
+      //  position: absolute;
+      //  top: 50%;
+      //  right: 0;
+      //  transform: translate(0, -50%);
+      //  width: 2px;
+      //  height: 65%;
+      //  background-color: #dedede;
+      //}
+    }
+
+    &.input-group-password {
+      .fa-eye {
+        z-index: 3;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        color: #585077;
+      }
+
+      .form-control {
+        padding-right: 50px;
+      }
+    }
+  }
+
+  .custom-checkbox {
+    .terms-and-conditions {
+      &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #585077;
+      }
+    }
+  }
+
+  .forgot-password {
+    margin-left: auto;
+    padding-top: 8px;
+  }
+}
+
+//.custom-control {
+//  display: flex;
+//  flex-direction: row;
+//  align-items: center;
+//  padding-left: 0;
+//
+//  .custom-control-label {
+//    padding-top: .025em;
+//
+//    &:before { top: 0; }
+//  }
+//
+//  .custom-control-input:checked ~ .custom-control-label::before {
+//    background-color: transparent !important;
+//  }
+//
+//  .custom-control-input:checked ~ .custom-control-label::after {
+//    background-image: url("../../../images/confirm-7.svg");
+//  }
+//}
+
+// Add company profile
+.add-company-profile {
+  form {
+    .form-control-container {
+      position: relative;
+
+      i {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 18px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    @media(min-width: 300px) {
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        label {
+          width: 100%;
+        }
+
+        .form-control-container {
+          width: 100%;
+
+          .form-control {
+            padding-left: 34px;
+
+            &:focus {
+              border: 1px solid #ced4da;
+            }
+          }
+        }
+      }
+    }
+
+    @media(min-width: 1200px) {
+      .form-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        label {
+          width: 40%;
+          margin-bottom: 0;
+        }
+
+        .form-control-container {
+          position: relative;
+          width: 60%;
+
+          .form-control {
+            padding-left: 30px;
+          }
+
+          i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            width: 18px;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    @media(min-width: 1366px) {
+      label {
+        width: 50%;
+      }
+
+      .form-control-container {
+        width: 50%;
+      }
+    }
+  }
+}
+
+//// Custom checkbox
+//.form-check {
+//  display: flex;
+//  flex-direction: row;
+//  align-items: center;
+//  width: 100%;
+//  padding-left: 0;
+//}
+//
+//.custom-checkbox {
+//  display: flex;
+//  flex-direction: row;
+//  align-items: center;
+//  width: 100%;
+//  padding-left: 0;
+//}
+
+//.custom-control-label {
+//  position: relative;
+//  display: flex;
+//  flex-direction: row;
+//  align-items: center;
+//  line-height: 1.25;
+//  padding-top: 0;
+//  font-size: .9rem;
+//
+//  @media(max-width: 767px) {
+//    line-height: 1.5;
+//  }
+//
+//  &::before {
+//    display: block;
+//    content: '';
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    width: 2.5vh;
+//    height: 2.5vh;
+//    border-radius: 2px;
+//    border: .5px solid #d6d6d6;
+//    background-color: #fff;
+//  }
+//}
+
+//.custom-control-label-link {
+//  margin-left: .2em;
+//  padding: 0 !important;
+//  text-decoration: underline;
+//  color: #585077 !important;
+//  user-select: none;
+//  background-color: transparent;
+//  border: 1px solid transparent;
+//  cursor: pointer;
+//  font-size: 1.35vh !important;
+//}
+
+//.custom-control-input:checked ~ .custom-control-label:before {
+//  border-color: #d6d6d6;
+//  background-color: #fff;
+//}
+//
+//.custom-control-input:checked ~ .custom-control-label:after {
+//  display: block;
+//  content: "";
+//  position: absolute;
+//  top: 2.75px !important;
+//  left: 3px !important;
+//  width: 1.875vh;
+//  height: 1.875vh;
+//  background-image: url('../images/confirm-white.svg');
+//  background-repeat: no-repeat;
+//  background-position: center;
+//  background-size: 70% auto;
+//  background-color: #585077;
+//  border-radius: 1px;
+//}
+//
+//.custom-control-input:checked ~ .custom-control-label:after {
+//  position: absolute;
+//  top: 2.75px !important;
+//  left: 3px !important;
+//  width: 1.875vh;
+//  height: 1.875vh;
+//  display: block;
+//  content: "";
+//  border-radius: 1px;
+//  background-color: #585077;
+//}
+
+// EOL: Custom checkbox
+
+

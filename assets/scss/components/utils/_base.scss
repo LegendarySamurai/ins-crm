@@ -1,0 +1,74 @@
+html {
+  & ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  & ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  & ::-webkit-scrollbar-thumb {
+    background: #342e4a;
+  }
+
+  & ::-webkit-scrollbar-thumb:hover {
+    background: #b1ad84;
+  }
+}
+
+body {
+  & ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  & ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  & ::-webkit-scrollbar-thumb {
+    background: #342e4a;
+  }
+
+  & ::-webkit-scrollbar-thumb:hover {
+    background: #b1ad84;
+  }
+}
+
+html, body {
+  height: 100%;
+  //direction: rtl;
+}
+
+// Scrollbar
+body ::-webkit-scrollbar {
+  width: 2px !important;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #585077 !important;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #585077 !important;
+}
+
+.container-fluid {
+  flex-grow: 1;
+}
+
+// For input and select not to zoom on focus on mobile ios
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+  }
+}

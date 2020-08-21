@@ -1,0 +1,74 @@
+.b-btn-square {
+  border: 1px solid #707070;
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 9pt;
+  white-space: nowrap;
+}
+
+.b-btn-purple {
+  background-color: #585077;
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 9pt;
+  color: #fff;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+
+  @media(min-width: 768px) {
+    .buttons-container {
+      width: 100%;
+    }
+  }
+}
+
+.submit-button {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+
+  button {
+    width: 124px;
+    height: 40px;
+    color: #fff;
+    border-radius: 0;
+
+    .btn {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      width: 176px;
+      height: 50px;
+      background-color: #585077;
+      color: #fff;
+
+      .fa-long-arrow-right {
+        transform: rotate(180deg);
+      }
+
+      &.active {
+        flex-direction: row;
+        background-color: #585077;
+
+        .fa-long-arrow-right {
+          transform: rotate(0);
+        }
+      }
+
+      // for all purple submit buttons like in services popup view
+      @media(max-width: 599px) {
+        width: auto;
+        height: 45px;
+        padding: 0 20px;
+        font-size: 12pt;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+// Checkbox
+.custom-control-label {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    display: none !important;
+  }
+}
+
+.custom-checkbox-ui {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border: 1px solid #585077;
+  border-radius: 5px;
+}
+
+.custom-control-input:checked ~ .custom-checkbox-ui::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/confirm-white.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70% auto;
+  background-color: #585077;
+}
+
+.input-label {
+  padding-left: 20px;
+}

@@ -1,0 +1,63 @@
+// Relative element should be position: relative;
+
+.decoration-element-wizard {
+  position: absolute;
+  left: -30px;
+
+  .square {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: #585077;
+    box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+    border: solid 0.5px #fefefe;
+  }
+
+  .dashed-line {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 0;
+    display: block;
+    border: 1px dashed #585077;
+  }
+}
+
+
+@media(max-width: 767px) {
+  .decoration-element-wizard {
+    display: none;
+  }
+
+  .decoration-element-mobile {
+    z-index: 1;
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    left: -7px;
+    transform: translate(0, -50%);
+    width: 12px;
+    height: 95%;
+    border-radius: 20px;
+    background-color: #585077;
+  }
+
+  .decoration-element-circle-arrow {
+    display: none;
+  }
+}
+
+
+// decoration-left-side-line
+.decoration-left-side-line {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  transform: translate(0, -50%);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 4px;
+  height: 70%;
+}

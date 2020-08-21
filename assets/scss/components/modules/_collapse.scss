@@ -1,0 +1,102 @@
+// Collapse
+.collapse-container {
+  padding: 8px;
+  max-height: 440px;
+  overflow-y: scroll;
+}
+
+.collapse-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+  background-color: #ebebeb;
+
+  .collapse-col-1 {
+    white-space: nowrap;
+
+    i {
+      @media(max-width: 599px) {
+        font-size: 10pt !important;
+      }
+    }
+  }
+
+  span {
+    white-space: nowrap;
+
+    @media(max-width: 599px) {
+      font-size: 10pt !important;
+    }
+
+    @media(max-width: 474px) {
+      display: inline-block;
+      max-width: 160px;
+      line-height: .785;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    @media(max-width: 374px) {
+      max-width: 140px;
+    }
+  }
+}
+
+.collapse-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Raleway", sans-serif;
+}
+
+.card-accordion-body {
+  .portfolio-img {
+    width: 40px;
+    height: 26px;
+  }
+
+  .collapse-col-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+
+    span {
+      @media(max-width: 599px) {
+        font-size: 10pt !important;
+      }
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      width: 1px;
+      height: 60%;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: #ccc;
+    }
+  }
+
+  .collapse-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 10px;
+  }
+
+  .collapse-col-2 {
+    width: 40%;
+
+    span {
+      @media(max-width: 599px) {
+        font-size: 10pt !important;
+      }
+    }
+  }
+}
