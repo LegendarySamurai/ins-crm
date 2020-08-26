@@ -718,7 +718,7 @@
 
   @media(max-width: 1299px) {
     .status-bar-col.filter-closed + .leads-list-col {
-      margin-left: 3% !important;
+      margin-right: 3% !important;
     }
 
     .table-header-col {
@@ -782,7 +782,7 @@
 
   @media(max-width: 991px) {
     .status-bar-col.filter-opened + .leads-list-col {
-      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
 
     .status-bar-col.filter-opened + .leads-list-col #content-search-input {
@@ -819,7 +819,7 @@
   @media only screen and (min-width: 600px) and (max-width: 991px) {
     .status-bar-col.filter-opened+.leads-list-col,
     .status-bar-col.filter-closed + .leads-list-col {
-      margin-left: 6% !important;
+      margin-right: 6% !important;
     }
   }
 
@@ -829,7 +829,7 @@
     .status-bar-col.filter-opened + .leads-list-col #content-search-input {
       max-width: calc(100% - 15px) !important;
       width: 100% !important;
-      margin-left: -37px;
+      margin-right: -37px;
     }
 
     .leads-list-col .table-row-list {
@@ -842,12 +842,12 @@
 
     .status-bar-col {
       &.filter-opened + .leads-list-col {
-        margin-left: 0;
+        margin-right: 0;
       }
 
       &.filter-closed + .leads-list-col {
         padding-top: 0 !important;
-        margin-left: 0 !important;
+        margin-right: 0 !important;
         z-index: 1;
       }
     }

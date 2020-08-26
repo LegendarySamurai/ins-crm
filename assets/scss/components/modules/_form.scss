@@ -22,29 +22,29 @@ form {
     .custom-select {
       color: #325181;
       height: 100%;
-      font-size: 1.4rem;
+      font-size: 10pt;
 
       &::-webkit-input-placeholder {
         color: #325181;
         height: 100%;
-        font-size: 1.4rem;
+        font-size: 10pt;
       }
       &::-moz-placeholder {
         color: #325181;
         height: 100%;
-        font-size: 1.4rem;
+        font-size: 10pt;
       }
       &:-ms-input-placeholder {
         color: #325181;
         height: 100%;
-        font-size: 1.4rem;
+        font-size: 10pt;
       }
     }
 
     .form-control {
       color: #325181;
       height: 100%;
-      font-size: 1.4rem;
+      font-size: 10pt;
 
       &:focus {
         border: 1px solid #ced4da;
@@ -54,24 +54,24 @@ form {
       &::-webkit-input-placeholder {
         color: #325181;
         height: 100%;
-        font-size: 1.4rem;
+        font-size: 10pt;
       }
       &::-moz-placeholder {
         color: #325181;
         height: 100%;
-        font-size: 1.4rem;
+        font-size: 10pt;
       }
       &:-ms-input-placeholder {
         color: #325181;
         height: 100%;
-        font-size: 1.4rem;
+        font-size: 10pt;
       }
     }
 
     .input-group-text {
       color: #325181;
       height: 100%;
-      font-size: 1.4rem;
+      font-size: 10pt;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -80,7 +80,7 @@ form {
       border-right: none;
 
       i, .far {
-        font-size: 1.5rem;
+        font-size: 12pt;
       }
     }
 

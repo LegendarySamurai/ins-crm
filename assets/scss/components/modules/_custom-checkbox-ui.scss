@@ -4,8 +4,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 0;
+  padding-right: 0;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 10pt;
 
   &::before,
   &::after {
@@ -42,5 +44,5 @@
 }
 
 .input-label {
-  padding-left: 20px;
+  padding-right: 20px;
 }
