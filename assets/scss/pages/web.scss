@@ -79,7 +79,7 @@ body {
     min-width: 250px;
     max-width: 250px;
     height: 100%;
-    background-image: linear-gradient(to bottom, #325181 71%, #696577);
+    background-image: linear-gradient(to bottom, #325181 71%, #005186);
     box-shadow: 0 1.5px 15px 0 rgba(0, 0, 0, 0.11);
     transition: transform 300ms ease;
   }
@@ -110,10 +110,11 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 80%;
-      padding: 6% 10% 4% 10%;
+      width: 90%;
+      padding: 14% 8% 14% 8%;
       border-bottom-right-radius: 20px;
       border-bottom-left-radius: 20px;
+      background-color: #fafafa;
     }
   }
 
@@ -251,7 +252,7 @@ body {
     .page-title {
       line-height: 1.04;
       margin-bottom: 10px;
-      color: #585077;
+      color: $main-font-color;
       font-size: 1.35rem;
       white-space: nowrap;
 
@@ -286,15 +287,11 @@ body {
   }
 
   .right-side-content {
+    //width: 100%;
+    //min-height: calc(100% - 90px - 20px - 80px);
     height: 100%;
-
-    & > .row {
-      height: 100%;
-    }
-  }
-
-  .right-side-content-col {
-    pointer-events: none;
+    //margin-top: 110px;
+    //margin-bottom: 60px;
   }
 
   .right-side-content-inner {
@@ -302,6 +299,9 @@ body {
     margin-top: 110px;
     margin-bottom: 60px;
     pointer-events: auto;
+    //height: 100%;
+    //pointer-events: auto;
+    background-color: transparentize(coral, .5); // Remove!!!!!!!
   }
 
   // Submenu
@@ -502,11 +502,6 @@ body {
     width: 40px;
     height: 40px;
 
-    .notification-button-icon {
-      color: #585077;
-      font-size: 15pt;
-    }
-
     @media(min-width: 992px) {
       cursor: pointer;
     }
@@ -519,7 +514,7 @@ body {
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 10px 8px;
   }
 
   .notification {
@@ -533,7 +528,7 @@ body {
 
   .notification-1 {
     .notification-button-icon {
-      font-size: 13pt;
+      transform: rotate(45deg);
     }
   }
 
@@ -555,7 +550,7 @@ body {
     .dropdown-list {
       &.visible {
         .icon-container {
-          background-color: #dd0000;
+          background-color: #e98303;
         }
       }
     }
@@ -867,12 +862,14 @@ body {
   .name-wrap {
     white-space: nowrap;
     text-align: center;
+    color: #325181;
   }
 
-  .company {
+  .more-details {
     font-weight: 300;
     white-space: nowrap;
     text-align: center;
+    color: #b3b3b3;
   }
 
   .image-wrapper {
@@ -943,7 +940,7 @@ body {
 //**** Leads list ****//
 .leads-list-page {
   height: 100%;
-  padding-top: 20px;
+  //padding-top: 20px;
 
   .leads-list-page-wrap {
     display: flex;
@@ -964,24 +961,29 @@ body {
 
   .status-bar-col.filter-closed + .leads-list-col {
     margin-right: 2%;
-    padding-top: 40px;
+    //padding-top: 40px;
   }
 
   .status-bar-col.filter-opened + .leads-list-col {
     margin-right: 1%;
-    margin-top: 40px;
+    //margin-top: 40px;
   }
 
   // leads-list-section
   .leads-list-col {
-    height: auto;
+    height: 100%;
     align-self: flex-start;
     position: sticky;
     bottom: 0;
+    pointer-events: none;
 
-    #content-search-input {
-      position: fixed;
-      top: 92px;
+    //#content-search-input {
+    //  position: fixed;
+    //  top: 92px;
+    //}
+
+    .leads-list-col-wrap {
+      pointer-events: auto;
     }
   }
 
@@ -998,43 +1000,68 @@ body {
       align-items: center;
       width: 100%;
       padding: 0 30px;
+      box-shadow: 0 1.5px 15px 0 rgba(0, 0, 0, 0.13);
+      background-color: #fff;
     }
 
     .header-col {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       padding: 10px;
       white-space: nowrap;
       font-size: 9pt;
-      color: #b3b3b3;
+      color: #325181;
       font-weight: 500;
+
+      div:last-child {
+        margin-right: 10px;
+      }
+    }
+
+    .inquiry-status-dropdown {
+      .dropdown-toggle {
+        i {
+          margin-right: 10px;
+        }
+      }
     }
   }
 
   // Col width
-  .date-col { width: 9%;}
+  .client-col {
+    width: 9%;
 
-  .contact-info-col { width: 17%; }
-
-  .services-col { width: 17%; }
-
-  .locations-col { width: 17%; }
-
-  .meeting-status-col { width: 9%; }
-
-  .inquiry-status-col { width: 12%; }
-
-  .status-col {
-    width: 15%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    span {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
 
-  .notification-col { width: 4%; }
+  .details-col { width: 17%; }
+
+  .date-col { width: 17%; }
+
+  .inquiry-status-col { width: 17%; }
+
+  .policies-col { width: 9%; }
+
+  .tasks-col { width: 12%; }
+
+  .other-options-col {
+    width: 15%;
+    //display: flex;
+    //flex-direction: row;
+    //align-items: center;
+    //justify-content: space-between;
+  }
+
+  //.notification-col { width: 4%; }
 
   .custom-select {
     border-radius: 2.5px;
-    border: 1px solid #325181;
+    border: 1px solid #005186;
     background-color: transparent;
   }
 

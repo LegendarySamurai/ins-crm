@@ -36,9 +36,9 @@
             <!-- Logo container -->
             <div class="top-logo-col">
               <div class="top-logo-container">
-                <div class="top-logo-container-inner system-color-bg-22">
-                  <img src="assets/images/logo/aiqoo-logo-white-middle.png" alt="logo" class="aiqoo-white-logo">
-                  <img src="assets/images/logo/pros-white-middle.png" alt="logo" class="pros-white-logo">
+                <div class="top-logo-container-inner">
+                  <img class="logo d-none d-md-block" src="assets/images/logo/logo-vertical.jpg" alt="logo desktop">
+                  <img class="logo d-md-none" src="assets/images/logo/logo.png" alt="logo mobile">
                 </div>
               </div>
               <div class="close-button">
@@ -187,16 +187,14 @@
                     <div class="col user-settings-col">
                       <div class="settings-inner-d">
                         <div class="image-container">
-                          <img src="assets/images/logo/white-logo.png" alt="logo" class="pros-white-logo">
+                          <img src="assets/images/logo/logo.jpg" alt="logo" class="white-logo">
                         </div>
                         <div class="promotion notification notification-1">
                           <div class="right-underlay-1"></div>
                           <div class="notification-button">
                             <div class="notification-button-icon">
-                              <i class="fad fa-bullhorn"></i>
-                            </div>
-                            <div class="index system-color-bg-1">
-                              <i class="system-color-20">15</i>
+                              <img class="d-none d-md-block" src="assets/images/notifications/megaphone-blue.svg" alt="megaphone desktop" >
+                              <img class="d-md-none" src="assets/images/notifications/megaphone-white.svg" alt="megaphone mobile" >
                             </div>
                           </div>
                           <div class="dropdown-list-wrapper dropdown-list-wrapper-one">
@@ -205,7 +203,7 @@
                               <div class="dropdown-items-wrapper">
                                 <div class="dropdown-list-item">
                                 <span class="icon-container">
-                                  <img src="assets/images/notifications/shopping-cart.png" alt="icon">
+                                  <img src="assets/images/notifications/notification-blue.svg" alt="icon">
                                 </span>
                                   <span class="item-content">
                                   <span class="item-title font-weight-bold">Promo 1</span>
@@ -252,7 +250,8 @@
                           <div class="right-underlay-2"></div>
                           <div class="notification-button">
                             <div class="notification-button-icon">
-                              <i class="fad fa-bell"></i>
+                              <img class="d-none d-md-block" src="assets/images/notifications/notification-blue.svg" alt="notification desktop" >
+                              <img class="d-md-none" src="assets/images/notifications/notification-white.svg" alt="notification mobile" >
                             </div>
                             <div class="index system-color-bg-2">
                               <i class="system-color-20">30</i>
@@ -313,10 +312,8 @@
                                   </span>
                                 </div>
                               </div>
-
                             </div>
                           </div>
-
                         </div>
                       </div>
                       <div class="user-outer">
@@ -355,14 +352,13 @@
                             <div class="user-inner-wrapper">
                               <div class="info">
                                 <div class="info-inner">
-                                  <span class="name-wrap font-weight-bold font-r-11">Hello <span
-                                      class="name">Aiqoo User</span></span>
-                                  <span class="company font-r-10">Aiqoo User company</span>
+                                  <span class="name-wrap font-weight-bold font-r-11">דני קושמרו</span>
+                                  <span class="more-details font-r-10">פרטים נוספים</span>
                                 </div>
                               </div>
                               <div class="image-wrapper">
                                 <div class="image-container">
-                                  <img src="assets/images/user-image.png" alt="user-image">
+                                  <img src="assets/images/notifications/user-image.png" alt="user-image">
                                 </div>
                               </div>
                             </div>
@@ -882,8 +878,8 @@
 
                         <!-- Services details -->
                         <div class="leads-list-col col">
-                          <div class="content-section">
-                            <div id="content-search-input" class="search mb-3 mb-lg-0">
+                          <div class="leads-list-col-wrap">
+                            <div id="content-search-input" class="search mb-3 mb-lg-0 d-none">
                               <span class="title font-weight-500 font-r-13">Leads List</span>
                               <div class="input-group">
                                 <div class="input-group-prepend"><i class="far fa-search"></i></div>
@@ -895,8 +891,10 @@
                                 <!-- Header -->
                                 <div class="col col-lg-12 table-header-col">
                                   <div class="table-header-wrap">
-                                    <div class="header-col contact-info-col user-col">
+                                    <div class="header-col client-col">
                                       <div class="client">לקוח</div>
+                                    </div>
+                                    <div class="header-col details-col">
                                       <div class="details">פרטים</div>
                                     </div>
                                     <div class="header-col date-col pl-0">
@@ -912,18 +910,18 @@
                                         </span>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                                        <a class="dropdown-item" href="#">
+                                          <a class="dropdown-item" href="#">
                                           <span class="inquiry-status-item">
                                             <i class="fad fa-sort-amount-up"></i>
                                             <span>בהליך הוספת פוליסה</span>
                                           </span>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
+                                          </a>
+                                          <a class="dropdown-item" href="#">
                                           <span class="inquiry-status-item">
                                             <i class="fad fa-sort-amount-down-alt"></i>
                                             <span>בהליך הוספת פוליסה</span>
                                           </span>
-                                        </a>
+                                          </a>
                                         </div>
                                       </div>
 
@@ -942,49 +940,45 @@
                                     <div class="leads-item-wrap mt-0">
                                       <div class="decoration-right-side-line system-color-bg-16"></div>
                                       <div class="leads-item">
-                                        <div class="date-col item-col pr-0">
-                                          <span class="font-weight-bold">26 MAR 2020</span>
-                                          <span>2:30 AM</span>
+                                        <div class="client-col item-col pr-0 font-weight-bold system-color-3">
+                                          <span> לב טוב</span>
+                                          <span>מירית</span>
                                         </div>
-                                        <div class="contact-info-col item-col system-color-6">
-                                          <span class="font-weight-bold"><i class="fad fa-user mr-3"></i>Paul R.</span>
-                                          <span><i class="fad fa-phone mr-3"></i>+ 1-45666433</span>
+                                        <div class="details-col item-col font-weight-400 system-color-3">
+                                          <span>052950888</span>
+                                          <span>mirit@gmail.com</span>
                                         </div>
-                                        <div class="services-col item-col system-color-6">
-                                          <span class="">Roofing</span>
-                                          <span>install new metal roof</span>
+                                        <div class="date-col item-col system-color-3">
+                                          <span class="start-date">10/03/2019</span>
+                                          <span class="font-r-16">-</span>
+                                          <span class="end-date">10/03/2020</span>
                                         </div>
-                                        <div class="locations-col item-col">
-                                          <span class="city">New York</span>
-                                          <span class="code">55435</span>
+                                        <div class="inquiry-status-col item-col font-r-9 system-color-3 font-weight-bold">
+                                          <select class="custom-select ">
+                                            <option class="font-r-9 font-weight-bold" selected>בהליך הוספת פוליסה</option>
+                                            <option class="font-r-9 font-weight-bold" value="1">ללא</option>
+                                            <option class="font-r-9 font-weight-bold" value="2">בהליך הוספת פוליסה</option>
+                                            <option class="font-r-9 font-weight-bold" value="3">ללא</option>
+                                            <option class="font-r-9 font-weight-bold" value="4">בהליך הוספת פוליסה</option>
+                                          </select>
                                         </div>
-                                        <div class="meeting-status-col item-col system-color-6">
-                                          <span class="icon system-color-14"><i class="fad fa-calendar-times"></i></span>
-                                          <span class="icon system-color-6 d-none"><i class="fad fa-clock"></i></span>
-                                          <span class="icon system-color-15 d-none"><i
-                                              class="fad fa-check-circle"></i></span>
-                                          <span class="text canceled system-color-14">Canceled</span>
-                                          <span class="text scheduled system-color-6 d-none">Scheduled</span>
-                                          <span class="text done system-color-15 d-none">One leger</span>
+
+                                        <div class="policies-col item-col">
+                                          <span class="">ביטוח חיים, ביטוח רכב</span>
+                                          <span class="">ביטוח אחריות מקצועית</span>
                                         </div>
-                                        <div class="atemptes-col item-col">
+                                        <div class="tasks-col item-col system-color-6">
+                                          <span>חזרה להצעת מחיר</span>
+                                        </div>
+                                        <div class="other-options-col item-col">
                                           <span class="icon"><i class="fad fa-phone-slash"></i></span>
                                           <span class="text system-color-14">5</span>
                                         </div>
-                                        <div class="status-col item-col">
-                                          <select class="custom-select font-r-9 system-color-6 font-weight-bold">
-                                            <option class="font-r-9 font-weight-bold" selected>Sale In Progress</option>
-                                            <option class="font-r-9 font-weight-bold" value="1">Sale In Progress</option>
-                                            <option class="font-r-9 font-weight-bold" value="2">Sale In Progress</option>
-                                            <option class="font-r-9 font-weight-bold" value="3">Sale In Progress</option>
-                                            <option class="font-r-9 font-weight-bold" value="4">Sale In Progress</option>
-                                          </select>
-                                        </div>
                                         <div class="notification-col item-col pr-0 font-r-10">
-                                      <span class="comment system-color-6"><i
-                                          class="fad fa-comment-alt-lines system-color-6"></i></span>
+                                          <span class="comment system-color-6"><i class="fad fa-comment-alt-lines system-color-6"></i></span>
                                           <span id="alert-button" class="alert-notification system-color-18 d-none">
-                                            <i class="fad fa-exclamation-triangle system-color-6"></i></span>
+                                            <i class="fad fa-exclamation-triangle system-color-6"></i>
+                                          </span>
                                         </div>
                                       </div>
                                     </div>
@@ -1005,6 +999,7 @@
                   </div>
                 </div>
               </div>
+
             </div>
             <!-- EOL: CONTENT BODY -->
           </div>

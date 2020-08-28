@@ -1,8 +1,14 @@
+// Font color #325181
+// BG color #005186
+
+$main-bg: #005186;
+$main-font-color: #325181;
+
 html, body {
   font-family: "Poppins", 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #fff;
   box-sizing: border-box;
-  color: #585077;
+  color: #005186;
   font-size: 10pt;
 }
 
@@ -11,37 +17,37 @@ textarea:focus, input:focus {
 }
 
 select:focus {
-  outline-color: #585077;
+  outline-color: #005186;
 }
 
 option:disabled {
-  background: #585077;
+  background: #005186;
   padding: 5px;
-  color: #292c6c !important;
+  color: #325181 !important;
   font-weight: bold;
   font-size: 11pt;
 }
 
 a {
-  color: #585077;
+  color: #325181;
 }
 
 a:hover {
   outline: 0;
   text-decoration: none;
-  color: #585077;
+  color: #325181;
 }
 
 a:active {
   outline: 0;
   text-decoration: none;
-  color: #585077;
+  color: #325181;
 }
 
 a:focus {
   outline: 0;
   text-decoration: none;
-  color: #585077;
+  color: #325181;
 }
 
 app {
@@ -57,7 +63,7 @@ app {
 }
 
 .text-primary {
-  color: #585077 !important;
+  color: #325181 !important;
 }
 
 // Font-family

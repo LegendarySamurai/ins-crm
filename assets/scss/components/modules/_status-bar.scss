@@ -10,7 +10,7 @@ body ::-webkit-scrollbar-thumb {
   position: sticky;
   bottom: 0;
   width: 300px;
-  height: auto;
+  height: 100%;
   align-self: flex-start;
   padding: 0;
   transition-duration: 400ms;
@@ -201,7 +201,8 @@ body ::-webkit-scrollbar-thumb {
   .type-list {
     height: auto;
     margin-top: 20px;
-    padding: 16px 30px;
+    //padding: 16px 30px;
+    padding: 0px 30px 0 30px;
 
     .custom-control {
       position: relative;
@@ -268,6 +269,7 @@ body ::-webkit-scrollbar-thumb {
   .lead-management-list {
     height: auto;
     margin-top: 20px;
+    padding: 0 30px;
   }
   // EOL: services-panel page
 }
@@ -296,7 +298,7 @@ body ::-webkit-scrollbar-thumb {
 
 // Additional class for .status-bar-col, when filter opened
 .filter-opened {
-  height: auto;
+  height: 100%;
   align-self: flex-start;
   position: sticky;
   top: 100px;
@@ -432,7 +434,7 @@ body ::-webkit-scrollbar-thumb {
     .status-bar {
       position: fixed;
       top: 110px;
-      left: 0;
+      right: 0;
       transform: translate(-300px, -20px);
       width: 300px;
       height: 100%;
@@ -458,12 +460,12 @@ body ::-webkit-scrollbar-thumb {
 
       .status-bar {
         z-index: 10;
-        transform: translate(200px, -20px);
+        transform: translate(-200px, -20px);
         pointer-events: auto;
       }
 
       .status-bar-panel {
-        display: flex;
+        //display: flex;
       }
     }
   }
@@ -482,7 +484,7 @@ body ::-webkit-scrollbar-thumb {
 
   .status-bar-col {
     &.filter-closed {
-      margin-left: -280px;
+      margin-right: -280px;
       padding-right: 10px;
 
       .status-bar-panel {
@@ -538,7 +540,7 @@ body ::-webkit-scrollbar-thumb {
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   .status-bar-col {
     .status-bar {
-      transform: translate(-300px, 32px);
+      transform: translate(300px, 32px);
     }
 
     &.filter-opened {
@@ -563,7 +565,7 @@ body ::-webkit-scrollbar-thumb {
     }
 
     &.filter-closed {
-      margin-left: 0 !important;
+      margin-right: 0 !important;
       padding: 0 !important;
     }
 
@@ -572,9 +574,9 @@ body ::-webkit-scrollbar-thumb {
     }
   }
 
-  .status-bar-col.filter-closed {
-    margin-left: 0;
-  }
+  //.status-bar-col.filter-closed {
+  //  margin-right: 0;
+  //}
 
   .status-bar-heading {
     z-index: 10;
@@ -598,13 +600,13 @@ body ::-webkit-scrollbar-thumb {
       align-items: center;
       width: 74px;
       height: 30px;
-      background-color: #325181;
+      background-color: #005186;
       color: #fff;
       border: none;
       border-radius: 5px;
 
       .fa-filter {
-        margin-right: 10px;
+        margin-left: 10px;
       }
     }
   }
