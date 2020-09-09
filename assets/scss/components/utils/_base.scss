@@ -61,7 +61,7 @@ body::-webkit-scrollbar-track {
   select,
   textarea,
   input {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -69,6 +69,6 @@ body::-webkit-scrollbar-track {
   select:focus,
   textarea:focus,
   input:focus {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
