@@ -1,3 +1,21 @@
+// When scroll page added class to the $('table-header-col') element to make table header sticky
+$(window).scroll(function() {
+	var scrollTop = $(window).scrollTop();
+	let fixedTopPanelHeight = $('.fixed-top-panel-d').height();
+	let contentSearchInputHeight = $('#content-search-input').height();
+
+	if ( scrollTop > (fixedTopPanelHeight + contentSearchInputHeight) ) {
+		// display add
+		$('.table-header-wrap').addClass('add-underline');
+		$('#content-search-input').addClass('no-underline');
+	}
+	else {
+		$('.table-header-wrap').removeClass('add-underline');
+		$('#content-search-input').removeClass('no-underline');
+	}
+
+});
+
 window.toggleList = (e) => {
 	var width = $(window).width();
 	if ($(e).hasClass("active")) {
@@ -45,80 +63,6 @@ const headerHeight = header.clientHeight;
 const search = document.querySelector('.search');
 const searchHeight = search.clientHeight;
 
-
-// function gotoBottom(className){
-// 	let element = document.getElementsByClassName(className);
-// 	element.scrollTop = element.scrollHeight - element.clientHeight;
-// }
-
-
-document.addEventListener('scroll', () => {
-	let scroll = $(document).scrollTop();
-	let leftContentHeight = statusBarCol.innerHeight;
-	let rightContentHeight = leadsListCol.innerHeight;
-	// console.log('=>', statusBarHeight > tableRowListHeight);
-
-	// console.log('SCROLL', scroll);
-	const contentHeight = tableRowList.clientHeight - window.innerHeight + headerHeight + searchHeight + 40;
-
-	if(statusBarCol.classList.contains('filter-opened')) {
-		// console.log('Filter is open!');
-		if (statusBarHeight > tableRowListHeight) {
-			// tableRowList.classList.add('fixed-position');
-			// console.log('1.fixed position added');
-		} else {
-			// console.log('1');
-			// tableRowList.classList.remove('fixed-position');
-		}
-	} else {
-		// console.log('Filter is close!');
-		if (statusBarHeight > tableRowListHeight) {
-			// console.log('status bar High!');
-			// console.log(statusBarHeight, tableRowListHeight);
-			// tableRowList.classList.add('fixed-position');
-			// console.log('2.fixed position added');
-		} else {
-			// console.log('Status bar is NOT High!');
-			// tableRowList.classList.remove('fixed-position');
-		}
-	}
-
-	if (statusBarHeight > tableRowListHeight) {
-		// console.log(statusBarHeight, tableRowListHeight);
-		// if(scroll > contentHeight) {
-		// 	console.log(contentHeight, scroll);
-		// 	// tableRowList.classList.add('fixed-position');
-		// 	// if(!statusBarCol.classList.contains('filter-opened')) {
-		// 	// 	return;
-		// 	// } else {
-		// 	// 	tableRowList.classList.add('fixed-position');
-		// 	// }
-		//
-		// }
-	}
-	// if(scroll > contentHeight) {
-	// 	console.log(contentHeight, scroll);
-	// 	// tableRowList.classList.add('fixed-position');
-	// 	if(!statusBarCol.classList.contains('filter-opened')) {
-	// 		return;
-	// 	} else {
-	// 		tableRowList.classList.add('fixed-position');
-	// 	}
-	//
-	// }
-	// else {
-	// 	console.log(2);
-	// 	tableRowList.classList.remove('fixed-position');
-	// }
-
-	// console.log(
-	// 	"=>",
-	// 	scroll,
-	// 	tableRowList.clientHeight,
-	// 	window.innerHeight,
-	// 	tableRowList.clientHeight - window.innerHeight + headerHeight + searchHeight + 40
-	// );
-});
 
 
 

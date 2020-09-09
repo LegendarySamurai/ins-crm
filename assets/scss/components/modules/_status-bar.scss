@@ -85,7 +85,7 @@ body ::-webkit-scrollbar-thumb {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding-left: 8px;
+        //padding-left: 8px;
       }
 
       .avatar {
@@ -159,7 +159,7 @@ body ::-webkit-scrollbar-thumb {
       flex-direction: column;
       align-items: flex-start;
       margin-right: 30px;
-      padding-left: 8px;
+      //padding-left: 8px;
     }
 
     .date-heading {
@@ -201,8 +201,8 @@ body ::-webkit-scrollbar-thumb {
   .type-list {
     height: auto;
     margin-top: 20px;
-    //padding: 16px 30px;
-    padding: 0px 30px 0 30px;
+    padding: 16px 30px;
+    //padding: 0px 30px 0 30px;
 
     .custom-control {
       position: relative;
@@ -269,7 +269,7 @@ body ::-webkit-scrollbar-thumb {
   .lead-management-list {
     height: auto;
     margin-top: 20px;
-    padding: 0 30px;
+    //padding: 0 30px;
   }
   // EOL: services-panel page
 }
@@ -298,7 +298,7 @@ body ::-webkit-scrollbar-thumb {
 
 // Additional class for .status-bar-col, when filter opened
 .filter-opened {
-  height: 100%;
+  height: auto;
   align-self: flex-start;
   position: sticky;
   top: 100px;
@@ -325,16 +325,16 @@ body ::-webkit-scrollbar-thumb {
 // Additional class for .status-bar-col, when filter closed
 .filter-closed {
   transition-duration: 400ms;
-  margin-right: -270px;
+  margin-right: -310px;
 
   .open-filter-btn {
-    right: 290px;
+    right: 260px;
   }
 
   .status-bar-panel {
     z-index: 8;
     position: fixed;
-    right: 250px;
+    right: 220px;
     top: 90px;
     display: flex;
     flex-direction: column;
@@ -455,7 +455,8 @@ body ::-webkit-scrollbar-thumb {
     }
     
     &.filter-opened {
-      margin-left: -270px;
+      //margin-left: -240px;
+      margin-right: -240px;
       z-index: 201;
 
       .status-bar {
@@ -465,7 +466,7 @@ body ::-webkit-scrollbar-thumb {
       }
 
       .status-bar-panel {
-        //display: flex;
+        display: flex;
       }
     }
   }
@@ -484,8 +485,8 @@ body ::-webkit-scrollbar-thumb {
 
   .status-bar-col {
     &.filter-closed {
-      margin-right: -280px;
-      padding-right: 10px;
+      margin-right: -250px;
+      padding-left: 10px;
 
       .status-bar-panel {
         right: 0 !important;
@@ -565,6 +566,7 @@ body ::-webkit-scrollbar-thumb {
     }
 
     &.filter-closed {
+      z-index: 10;
       margin-right: 0 !important;
       padding: 0 !important;
     }
@@ -574,40 +576,40 @@ body ::-webkit-scrollbar-thumb {
     }
   }
 
-  //.status-bar-col.filter-closed {
-  //  margin-right: 0;
+  .status-bar-col.filter-closed {
+    margin-right: 0;
+  }
+
+  //.status-bar-heading {
+  //  z-index: 10;
+  //  position: fixed;
+  //  top: 140px;
+  //  left: 0;
+  //  display: flex !important;
+  //  flex-direction: row;
+  //  align-items: center;
+  //  justify-content: space-between;
+  //  width: 100%;
+  //  height: 70px;
+  //  padding: 0 20px;
+  //  box-shadow: 0 1.5px 10px 0 rgba(0, 0, 0, 0.16);
+  //  background-color: #fff;
   //}
 
-  .status-bar-heading {
-    z-index: 10;
-    position: fixed;
-    top: 140px;
-    left: 0;
-    display: flex !important;
+  .filter-btn {
+    display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 70px;
-    padding: 0 20px;
-    box-shadow: 0 1.5px 10px 0 rgba(0, 0, 0, 0.16);
-    background-color: #fff;
+    width: 74px;
+    height: 30px;
+    background-color: #005186;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 
-    .filter-btn {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: 74px;
-      height: 30px;
-      background-color: #005186;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-
-      .fa-filter {
-        margin-left: 10px;
-      }
+    .fa-filter {
+      margin-left: 10px;
     }
   }
 
