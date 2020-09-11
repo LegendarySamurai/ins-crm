@@ -6,6 +6,10 @@ body ::-webkit-scrollbar-thumb {
   background-color: #325181 !important;
 }
 
+.filter-btn {
+  display: none;
+}
+
 .status-bar-col {
   position: sticky;
   bottom: 0;
@@ -358,6 +362,8 @@ body ::-webkit-scrollbar-thumb {
   }
 }
 
+// --------------------- ** MEDIA **--------------------//
+
 @media(max-width: 1399px) {
   .open-filter-btn {
     right: 240px !important;
@@ -435,7 +441,7 @@ body ::-webkit-scrollbar-thumb {
       position: fixed;
       top: 110px;
       right: 0;
-      transform: translate(-300px, -20px);
+      transform: translate(300px, -20px);
       width: 300px;
       height: 100%;
       max-height: calc(100vh - 90px);
@@ -490,7 +496,7 @@ body ::-webkit-scrollbar-thumb {
 
       .status-bar-panel {
         right: 0 !important;
-        top: 140px;
+        top: 110px;
         padding-top: 30px;
       }
 
@@ -541,12 +547,12 @@ body ::-webkit-scrollbar-thumb {
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   .status-bar-col {
     .status-bar {
-      transform: translate(300px, 32px);
+      transform: translate(300px, 0);
     }
 
     &.filter-opened {
       .status-bar {
-        transform: translate(0, 32px);
+        transform: translate(0, 0);
         max-height: calc(100vh - 70px - 70px - 2px);
       }
     }
@@ -597,6 +603,10 @@ body ::-webkit-scrollbar-thumb {
   //}
 
   .filter-btn {
+    position: absolute;
+    left: 15px;
+    top: 33%;
+    transform: translate(0, -50%);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -714,6 +724,21 @@ body ::-webkit-scrollbar-thumb {
     .content {
       width: 100%;
       margin-top: 80px;
+    }
+  }
+}
+
+@media(max-width: 450px) {
+  .filter-btn {
+    left: -5px;
+    width: auto;
+
+    .fa-filter {
+      margin-left: 0;
+    }
+
+    span {
+      font-size: 0 !important;
     }
   }
 }

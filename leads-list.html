@@ -38,7 +38,7 @@
               <div class="top-logo-container">
                 <div class="top-logo-container-inner">
                   <img class="logo d-none d-md-block" src="assets/images/logo/logo-vertical.jpg" alt="logo desktop">
-                  <img class="logo d-md-none" src="assets/images/logo/logo.png" alt="logo mobile">
+                  <img class="logo d-md-none" src="assets/images/logo/logo-horizontal.png" alt="logo mobile">
                 </div>
               </div>
               <div class="close-button">
@@ -126,8 +126,8 @@
               </div>
             </div>
 
-            <div class="copyright system-color-19">©️ 2019 AiqPros - <span
-                class="d-none d-sm-inline-block">by AIQOO</span></div>
+            <div class="copyright system-color-19">©️ 2019 Copyright - <span
+                class="d-none d-sm-inline-block">by Company name</span></div>
           </div>
         </div>
 
@@ -136,7 +136,7 @@
           <div class="right-side-container">
             <!-- Only for mobile -->
             <div class="mobile-menu-ope-btn">
-              <button class=""><i class="far fa-bars font-16"></i></button>
+              <button class="hamburger-menu"><i class="far fa-bars font-16"></i></button>
             </div>
             <!-- Fixed top panel -->
             <div class="fixed-top-panel-d">
@@ -176,6 +176,10 @@
 
                               </span>
                             </div>
+                            <button type="button" class="filter-btn">
+                              <i class="fad fa-filter"></i>
+                              <span class="font-r-10">Filter</span>
+                            </button>
 
                           </div>
                         </div>
@@ -186,7 +190,7 @@
                     <div class="col user-settings-col">
                       <div class="settings-inner-d">
                         <div class="image-container">
-                          <img src="assets/images/logo/logo.jpg" alt="logo" class="white-logo">
+                          <img src="assets/images/logo/logo-vertical.jpg" alt="logo" class="">
                         </div>
                         <div class="promotion notification notification-1">
                           <div class="right-underlay-1"></div>
@@ -357,7 +361,7 @@
                               </div>
                               <div class="image-wrapper">
                                 <div class="image-container">
-                                  <img src="assets/images/notifications/user-image.png" alt="user-image">
+                                  <img src="assets/images/notifications/dummy-user-image.png" alt="user-image">
                                 </div>
                               </div>
                             </div>
@@ -397,13 +401,13 @@
                                   <i class="fad fa-times-circle font-r-16 close-filter-btn"></i>
                                 </div>
                                 <!-- For mobile devices -->
-                                <div class="status-bar-heading">
-                                  <span class="title font-weight-bold font-r-18">Leads</span>
-                                  <button type="button" class="filter-btn">
-                                    <i class="fad fa-filter"></i>
-                                    <span class="font-r-10"></span>Filter
-                                  </button>
-                                </div>
+                                <!--<div class="status-bar-heading">-->
+                                <!--  <span class="title font-weight-bold font-r-18">Leads</span>-->
+                                <!--  <button type="button" class="filter-btn">-->
+                                <!--    <i class="fad fa-filter"></i>-->
+                                <!--    <span class="font-r-10"></span>Filter-->
+                                <!--  </button>-->
+                                <!--</div>-->
 
                                 <div class="status-bar-inner">
                                   <div class="status-bar-inner-backlayer">
@@ -420,7 +424,7 @@
                                     <div class="status-bar-inner-body">
 
                                       <!-- Search mobile -->
-                                      <div class="search mt-4 mb-3 mb-lg-0">
+                                      <div class="search mt-2 mb-2 mb-lg-0">
                                         <div class="input-group">
                                           <div class="input-group-prepend"><i class="far fa-search"></i></div>
                                           <input type="text" class="form-control" placeholder="Search">
@@ -878,13 +882,13 @@
                         <!-- Services details -->
                         <div class="leads-list-col col">
                           <div class="leads-list-col-wrap">
-                            <div id="content-search-input" class="search mb-3 mb-lg-0 d-none">
-                              <span class="title font-weight-500 font-r-13">Leads List</span>
-                              <div class="input-group">
-                                <div class="input-group-prepend"><i class="far fa-search"></i></div>
-                                <input type="text" class="form-control" placeholder="Search">
-                              </div>
-                            </div>
+                            <!--<div id="content-search-input" class="search mb-3 mb-lg-0 d-none">-->
+                            <!--  <span class="title font-weight-500 font-r-13">Leads List</span>-->
+                            <!--  <div class="input-group">-->
+                            <!--    <div class="input-group-prepend"><i class="far fa-search"></i></div>-->
+                            <!--    <input type="text" class="form-control" placeholder="Search">-->
+                            <!--  </div>-->
+                            <!--</div>-->
                             <div class="content-container">
                               <div class="row table-row-list">
                                 <!-- Header -->
@@ -927,7 +931,7 @@
                                     </div>
                                     <div class="header-col policies-col cursor-p">פוליסות</div>
                                     <div class="header-col tasks-col">משימות</div>
-                                    <div class="header-col notification-col pl-0">אפשרויות נוספות</div>
+                                    <div class="header-col notification-col pr-0">אפשרויות נוספות</div>
                                   </div>
                                 </div>
 
@@ -948,7 +952,7 @@
                                         </div>
                                         <div class="date-col item-col system-color-3">
                                           <span class="start-date">10/03/2019</span>
-                                          <span class="font-r-14 mx-2">-</span>
+                                          <span class=" mx-2">-</span>
                                           <span class="end-date">10/03/2020</span>
                                         </div>
                                         <div class="inquiry-status-col item-col font-r-9 system-color-3 font-weight-bold">
@@ -1004,12 +1008,26 @@
                                         <div class="tasks-col item-col system-color-6">
                                           <span>חזרה להצעת מחיר</span>
                                         </div>
-                                        <div class="notification-col item-col pl-0 font-r-10">
-                                          <span class="comment system-color-6"><i class="fad fa-comment-alt-lines system-color-6"></i></span>
-                                          <span id="alert-button" class="alert-notification system-color-18 d-none">
-                                            <i class="fad fa-exclamation-triangle system-color-6"></i>
+                                        <div class="notification-col item-col pr-0 font-r-10">
+                                          <span class="notification-popover system-color-6"
+                                            tabindex="0"
+                                            data-toggle="popover"
+                                            data-trigger="focus"
+                                            data-original-title="כותרת"
+                                            data-content="הסטטוס עודכן. תודה.">
+                                            <i class="fad fa-comment-alt-lines system-color-6"></i>
+                                          </span>
+                                          <span class="notification-popover system-color-18"
+                                            tabindex="0"
+                                            data-toggle="popover"
+                                            data-trigger="focus"
+                                            data-original-title="כותרת"
+                                            data-content="הסטטוס לא עודכן. למעלה מ 24 שעות.">
+                                            <i class="fad fa-exclamation-triangle"></i>
                                           </span>
                                         </div>
+
+
                                       </div>
                                     </div>
                                     <!-- EOL: Item -->
@@ -1623,43 +1641,9 @@
 
 <!--<script src="assets/js/custom-popover.js"></script>-->
 <script src="assets/js/layout-page.js"></script>
-<script src="assets/js/status-bar.js"></script>
+<script src="assets/js/filter-panel.js"></script>
 <script src="assets/js/leads-list.js"></script>
-<style>
-  .popover {
-    max-width: 160px !important;
-    background-color: #fff !important;
-    border: none !important;
-    border-radius: 1.5px !important;
-    box-shadow: 0 1.5px 15px 0 rgba(0, 0, 0, 0.16) !important;
-  }
 
-  .arrow::before,
-  .arrow::after {
-    border-left-color: #fff !important;
-  }
-
-  .popover-header {
-    padding: .5rem .75rem !important;
-    margin-bottom: 0 !important;
-    font-family: "Arial", sans-serif !important;
-    font-size: 9pt !important;
-    font-weight: 900 !important;
-    background-color: #fff !important;
-    color: #f20b0b !important;
-    border-bottom: none !important;
-  }
-
-  .popover-header:hover {
-    color: #f20b0b !important;
-  }
-
-  .popover-body {
-    padding: 0 .75rem .5rem !important;
-    font-size: 9pt !important;
-    color: #f20b0b !important;
-  }
-</style>
 
 
 </body>

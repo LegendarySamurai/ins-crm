@@ -7,9 +7,10 @@
 @import '../components/modules/decoration-elements';
 @import '../components/modules/form';
 @import '../components/modules/search';
-@import '../components/modules/status-bar';
+@import '../components/modules/filter-panel';
 @import '../components/modules/collapse';
 @import '../components/modules/input-remark';
+@import '../components/modules/popover-custom';
 
 // utils
 @import '../components/utils/base';
@@ -24,6 +25,12 @@ body {
 
   &.blocked {
     overflow: hidden;
+  }
+}
+
+.notification-popover {
+  &:focus {
+    outline: none;
   }
 }
 
@@ -242,8 +249,6 @@ body {
     max-width: calc(100% - 250px);
     height: 90px;
     background-color: #fff;
-
-
   }
 
   .right-side-col {
@@ -493,7 +498,7 @@ body {
 
   .notification-1 {
     .notification-button-icon {
-      transform: rotate(45deg);
+      width: 40px;
     }
   }
 
@@ -508,6 +513,10 @@ body {
     .index {
       top: 0;
       right: 2px;
+    }
+
+    .notification-button-icon {
+      width: 33px;
     }
   }
 
@@ -529,9 +538,8 @@ body {
 
       &:before {
         position: absolute;
-        top: -10px;
-        left: -28px;
-        transform: translate(0, 0);
+        top: -7px;
+        left: 12px;
         display: block;
         content: '';
         width: .1px;
@@ -670,8 +678,8 @@ body {
   .item-content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    //justify-content: flex-start;
+    align-items: flex-end;
     width: auto;
     flex-grow: 1;
     margin-left: 6px;
@@ -776,8 +784,9 @@ body {
   .user-inner {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    width: 100%;
     height: 100%;
 
     .fa-user-edit {
@@ -802,6 +811,7 @@ body {
   .info-inner {
     position: relative;
     display: flex;
+    align-items: end;
     flex-direction: column;
     line-height: 1.25;
     padding-right: 20px;
@@ -916,16 +926,17 @@ body {
     margin-left: -15px;
   }
 
-  .status-bar-col.filter-closed + .leads-list-col #content-search-input {
-    max-width: calc(100% - 250px - 50px - 15px - 10px);
-  }
-
-  .status-bar-col.filter-opened + .leads-list-col #content-search-input {
-    max-width: calc(100% - 250px - 310px - 15px);
-  }
+  //.status-bar-col.filter-closed + .leads-list-col #content-search-input {
+  //  max-width: calc(100% - 250px - 50px - 15px - 10px);
+  //}
+  //
+  //.status-bar-col.filter-opened + .leads-list-col #content-search-input {
+  //  max-width: calc(100% - 250px - 310px - 15px);
+  //}
 
   .status-bar-col.filter-closed + .leads-list-col {
-    margin-right: 2%;
+    margin-right: calc(50px + 15px);
+    //padding-top: 40px;
   }
 
   .status-bar-col.filter-opened + .leads-list-col {
@@ -934,19 +945,18 @@ body {
 
   // leads-list-section
   .leads-list-col {
-    height: 100%;
+    height: auto;
     align-self: flex-start;
     position: sticky;
     bottom: 0;
-    pointer-events: none;
 
     .leads-list-col-wrap {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
-      padding: 0 1%;
-      pointer-events: auto;
+      //display: flex;
+      //flex-direction: row;
+      //align-items: center;
+      //width: 100%;
+      //padding: 0 1%;
+      //pointer-events: auto;
     }
   }
 
@@ -1010,18 +1020,28 @@ body {
     }
   }
 
-  .details-col { width: 12%; }
+  .details-col {
+    width: 15%;
+  }
 
-  .date-col { width: 15%; }
+  .date-col {
+    width: 15%;
+  }
 
-  .inquiry-status-col { width: 17%; }
+  .inquiry-status-col {
+    width: 17%;
+  }
 
-  .policies-col { width: 12%; }
+  .policies-col {
+    width: 17%;
+  }
 
-  .tasks-col { width: 20%; }
+  .tasks-col {
+    width: 17%;
+  }
 
   .notification-col {
-    width: 15%;
+    width: 10%;
   }
 
   .custom-select {
@@ -1073,6 +1093,7 @@ body {
     .item-col {
       position: relative;
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       padding: 0 10px;
       font-size: 9pt;
@@ -1084,11 +1105,19 @@ body {
       }
 
       &.notification-col {
-        align-items: flex-start;
+        //align-items: flex-end;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
 
         span {
           text-align: left;
           cursor: pointer;
+
+          &:not(:last-child) {
+            margin: 0 0 0 2px;
+          }
         }
 
         .popover-header,
@@ -1133,6 +1162,13 @@ body {
 
           u {
             text-decoration: none;
+          }
+        }
+
+        .dropdown-menu {
+          &.show {
+            max-width: 245px;
+            //transform: translate3d(0px, 36px, 0px);
           }
         }
 

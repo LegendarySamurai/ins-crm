@@ -1,0 +1,33 @@
+.popover {
+  max-width: 160px !important;
+  background-color: #fff !important;
+  border: none !important;
+  border-radius: 1.5px !important;
+  box-shadow: 0 1.5px 15px 0 rgba(0, 0, 0, 0.16) !important;
+}
+
+.arrow::before,
+.arrow::after {
+  border-left-color: #fff !important;
+}
+
+.popover-header {
+  padding: .5rem .75rem !important;
+  margin-bottom: 0 !important;
+  font-family: "Arial", sans-serif !important;
+  font-size: 13pt !important;
+  font-weight: 900 !important;
+  background-color: #fff !important;
+  color: #342e4a !important;
+  border-bottom: none !important;
+}
+
+.popover-header:hover {
+  color: #342e4a !important;
+}
+
+.popover-body {
+  padding: 0 .75rem .5rem !important;
+  font-size: 9pt !important;
+  color: #342e4a !important;
+}

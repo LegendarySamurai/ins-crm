@@ -1,14 +1,31 @@
-$(document).ready(function () {
-    /*
-    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
-    */
+﻿let dotNetReference;
+window.SetDotNetReference = (reference) => {
+    dotNetReference = reference;
+    return true;
+};
 
-    $('#home a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    });
+window.LoadHeadJsFile = (src) => {
+    var script = document.createElement('script');
+    script.src = src;
+    document.head.appendChild(script);
+    return true;
+};
 
-});
+window.LoadBodyJsFile = (src) => {
+    var script = document.createElement('script');
+    script.src = src;
+    document.body.appendChild(script);
+    return true;
+};
+
+window.disableScroll = () => {
+    $("body").addClass("overflow-hidden");
+};
+
+window.enableScroll = () => {
+    $("body").removeClass("overflow-hidden");
+};
+
 
 window.MoveToTop = (id, trIndex) => {
 
@@ -19,21 +36,36 @@ window.MoveToTop = (id, trIndex) => {
     return true;
 };
 
+window.OpenSelectFileDialog = (id) => {
+    document.getElementById(id).click();
+}
 
 window.RefreshPage = () => {
     location.reload();
     return true;
 };
 
-
 function validateSignIn() {
+
+    document.getElementById("SigninBtn").disabled = true;
+    reloadon(SigninBtnSpinner);
+    reloadoff(SigninBtnNext);
+
 
     var fields = document.SignIn;
     var ErrorCount = 0;
 
+    if (validateEmail(fields.userEmail.value) == false) {
+        document.getElementById("SignInErrorEmail").innerHTML = '<span>Please enter valid <span class="font-weight-bold">email address</span></span>';
+        reloadon(SignInErrorEmail);
+        fields.userEmail.focus();
+        ErrorCount++;
+    } else {
+        reloadoff(SignInErrorEmail);
+    }
     var resMsg = validatePassword(fields.userPassword);
     if (resMsg != "NoError") {
-        document.getElementById("SignInErrorPassword").innerHTML = resMsg;
+        document.getElementById("SignInErrorPassword").innerHTML = '<span>' + resMsg.replace('Password', '<span class="font-weight-bold">Password</span>');
         reloadon(SignInErrorPassword);
         fields.userPassword.focus();
         ErrorCount++;
@@ -41,64 +73,228 @@ function validateSignIn() {
         reloadoff(SignInErrorPassword);
     }
 
-    if (validateEmail(fields.userEmail.value) == false) {
-        reloadon(SignInErrorEmail);
-        fields.userEmail.focus();
-        ErrorCount++;
-    } else {
-        reloadoff(SignInErrorEmail);
-    }
     if (ErrorCount == 0) {
         return true;
     }
     else {
+        reloadon(SigninBtnNext);
+        reloadoff(SigninBtnSpinner);
+        document.getElementById("SigninBtn").disabled = false;
         return false;
     }
 }
-function validateSignUp(event) {
 
-    var fields = document.SignIn;
+
+AddAntiForgeryToken = function (data) {
+    data.__RequestVerificationToken = $('#__AjaxAntiForgeryForm input[name=__RequestVerificationToken]').val();
+    return data;
+};
+
+function validateSignUp() {
+
+    document.getElementById("SignupBtn").disabled = true;
+    reloadon(SignupBtnSpinner);
+    reloadoff(ServerErrorMessage);
+    reloadoff(SignupBtnNext);
+
+
+    var fields = document.SignUpForm;
     var ErrorCount = 0; 
-    
-    var resMsg = validatePassword(fields.userPassword);
-    
-    if (resMsg != "NoError") {
-        document.getElementById("SignInErrorPassword").innerHTML = resMsg;
-        reloadon(SignInErrorPassword);
-        fields.userPassword.focus();
+
+    if (validateName(fields.customerName.value) == false) {
+        document.getElementById("SignUpErrorUserName").innerHTML = '<span><span class="font-weight-bold">Name</span> should not be empty</span>';
+        reloadon(SignUpErrorUserName);
+        fields.customerName.focus();
         ErrorCount++;
-        //event.preventDefault();
     } else {
-        reloadoff(SignInErrorPassword);
+        reloadoff(SignUpErrorUserName);
     }
 
-    if (validateEmail(fields.userEmail.value) == false) {
-        reloadon(SignInErrorEmail);
-        fields.userEmail.focus();
+    var resMsg = validatePhone(fields.customerPhone);
+    if (resMsg != "NoError") {
+        document.getElementById("SignUpErrorPhone").innerHTML = '<span>' + resMsg.replace('Phone Number', '<span class="font-weight-bold">Phone Number</span>');
+        reloadon(SignUpErrorPhone);
+        fields.customerPhone.focus();
         ErrorCount++;
-        //event.preventDefault();
     } else {
-        reloadoff(SignInErrorEmail);
+        reloadoff(SignUpErrorPhone);
     }
-    //alert("name->" + fields.userName.value);
-    if (validateName(fields.userName.value) == false) {
-        //alert("name-> Error");
-        reloadon(SignInErrorName);
-        fields.userName.focus();
+
+    if (validateEmail(fields.customerEmail.value) == false) {
+        document.getElementById("SignUpErrorEmail").innerHTML = '<span>Please enter valid <span class="font-weight-bold">email address</span></span>';
+        reloadon(SignUpErrorEmail);
+        fields.customerEmail.focus();
         ErrorCount++;
-        //event.preventDefault();
     } else {
-        reloadoff(SignInErrorName);
+        reloadoff(SignUpErrorEmail);
     }
-    //alert(ErrorCount);
+
     if (ErrorCount == 0) {
-        return true;
+        if (document.getElementById("customerTerms").checked == false) {
+            document.getElementById("SignUpErrorTerms").innerHTML = '<span>Please read and agree to Terms and Conditions</span>';
+            reloadon(SignUpErrorTerms);
+            fields.customerName.focus();
+            ErrorCount++;
+        } else {
+            reloadoff(SignUpErrorTerms);
+        }
     }
-    else {
-        //event.preventDefault();
+
+
+    if (ErrorCount == 0) {
+        signUpAjaxCall();
         return false;
     }
+    else {
+        reloadon(SignupBtnNext);
+        reloadoff(SignupBtnSpinner);
+        document.getElementById("SignupBtn").disabled = false;
+        return false;
+    }
+
 }
+
+function signUpAjaxCall() {
+    $.ajax({
+        type: "post",
+        url: $(this).attr("rel"),
+        data: AddAntiForgeryToken($('#SignUpForm').serialize()),
+        success: function (response) {
+            if (response == "ok") {
+                window.location.reload();
+                //reloadoff(AccountSignUpDiv);
+                //reloadon(AccountVerificationDiv);
+            }
+            else {
+                document.getElementById("ServerErrorMessage").innerHTML = '<span>' + response + '</span>';
+                reloadon(ServerErrorMessage);
+                reloadon(SignupBtnNext);
+                reloadoff(SignupBtnSpinner);
+                document.getElementById("SignupBtn").disabled = false;
+            }
+        }
+    });
+}
+
+
+
+
+
+function validateSmsVerification() {
+
+    document.getElementById("VerificationBtn").disabled = true;
+    reloadon(VerificationBtnSpinner);
+    reloadoff(VerificationErrorMessage);
+    reloadoff(VerificationBtnNext);
+
+
+    var fields = document.SmsVerificationForm;
+    var ErrorCount = 0;
+
+    var VerificationCode = fields.Verification_1.value + fields.Verification_2.value + fields.Verification_3.value + fields.Verification_4.value ;
+    fields.smsVerifyCode.value = VerificationCode;
+
+    if (VerificationCode.length != 4) {
+        document.getElementById("VerificationErrorMessage").innerHTML = '<span><span class="font-weight-bold">Verification Code</span> should be 4 digits</span>';
+        reloadon(VerificationErrorMessage);
+        fields.Verification_1.focus();
+        ErrorCount++;
+    } else {
+        reloadoff(VerificationErrorMessage);
+    }
+  
+
+    if (ErrorCount == 0) {
+        validateSmsAjaxCall();
+        return false;
+    }
+    else {
+        reloadon(VerificationBtnNext);
+        reloadoff(VerificationBtnSpinner);
+        document.getElementById("VerificationBtn").disabled = false;
+        return false;
+    }
+
+}
+
+function validateSmsAjaxCall() {
+    $.ajax({
+        type: "post",
+        url: $(this).attr("rel"),
+        data: AddAntiForgeryToken($('#SmsVerificationForm').serialize()),
+        success: function (response) {
+
+            if (response == "ok") {
+                window.location.href = '/Dashboard';
+            }
+            else {
+                document.getElementById("VerificationErrorMessage").innerHTML = '<span>' + response + '</span>';
+                reloadon(VerificationErrorMessage);
+                reloadon(VerificationBtnNext);
+                reloadoff(VerificationBtnSpinner);
+                document.getElementById("VerificationBtn").disabled = false;
+            }
+        }
+    });
+}
+document.addEventListener('readystatechange', event => {
+
+    // When HTML/DOM elements are ready:
+    //if (event.target.readyState === "interactive") {   //does same as:  ..addEventListener("DOMContentLoaded"..
+    //alert("hi 1");
+    //}
+
+    // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+    if (event.target.readyState === "complete") {
+        var body = $('#SmsVerificationForm');
+        body.on('keyup', 'input', goToNextInput);
+        body.on('keydown', 'input', onKeyDown);
+        body.on('click', 'input', onFocus);
+
+
+        function goToNextInput(e) {
+            var key = e.which,
+                t = $(e.target),
+                sib = t.next('input');
+
+
+            if (key === 9 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105)) {
+                
+            }
+            else {
+                e.preventDefault();
+                return false;
+            }
+
+            if (key === 9) {
+                return true;
+            }
+
+            if (!sib || !sib.length) {
+                sib = body.find('input').eq(0);
+            }
+            sib.select().focus();
+        }
+
+        function onKeyDown(e) {
+            var key = e.which;
+
+            if (key === 9 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105)) {
+                return true;
+            }
+
+            e.preventDefault();
+            return false;
+        }
+
+        function onFocus(e) {
+            $(e.target).select();
+        }
+
+
+    }
+});
+
 
 function validatePassword(pass) {
     var error = "";
@@ -127,12 +323,36 @@ function validatePassword(pass) {
 
     return error;
 }
+function validateNotEmptyPassword(pass) {
+    if (pass.value == "" || pass.value == null) {
+        error = "Password should not be empty!.";
+    }else {
+        error = "NoError";
+    }
+
+    return error;
+}
 function validateName(Name) {
     var error = true;
 
     if (Name == "" || Name == null) {
         error = false;
     } 
+
+    return error;
+}
+function validatePhone(Phone) {
+    var phonePattern = /(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})/;
+        
+    if (Phone.value == "" || Phone.value == null) {
+        error = "Phone Number should not be empty.";
+    } else if ((Phone.value.length != 16)) {
+        error = "Phone Number should not be less than 10 digits";
+     } else if (!Phone.value.match(phonePattern)) {
+         error = "Invalid Phone Number Please re-enter using valid 10 digit number";
+     } else {
+        error = "NoError";
+    }
 
     return error;
 }
@@ -148,6 +368,9 @@ function reloadoff(c) {
     c.style.display = "none";
 }
 
+
+
+/*
 
 function openNav() {
     $(".main-wrapper").css("z-index", 0);
@@ -166,7 +389,18 @@ function closeNav() {
     $(".main-wrapper").css("z-index", "");
 }
 
+function openSideBar() {
+    console.log('added');
+    $(".sidebar-overlay").attr("navIsOpen", "true");
+    $(".main-wrapper-inner").addClass("active");
+}
 
+function closeSideBar() {
+    $(".sidebar-overlay")[0].style.display = "none";
+    $(".main-wrapper-inner").css("z-index", "");
+    $(".main-wrapper-inner").removeClass("active");
+    $(".sidebar-overlay").attr("navIsOpen", "false");
+}
 
 
 window.openInFixedPostion = (element) => {
@@ -323,13 +557,7 @@ window.collapseExtendFilter = () => {
 
 
 
-window.lockWindow = () => {
-    $("body").addClass("overflow-hidden");
-};
 
-window.releaseWindow = () => {
-    $("body").removeClass("overflow-hidden");
-};
 
 window.togglePanel = (e) => {
     var width = $(window).width(); 
@@ -363,58 +591,6 @@ function myFunction() {
         $(".lead-data-panel").removeClass("tab-panel");
     }
 }
-
-
-////wehater
-//var city, lat, lon, apiUrl;
-
-//window.addEventListener("load", function () {
-//    getGeoLocation("https://api.ipdata.co/?api-key=565e4d0e5329609464a995a1d828b97341e2867b20e97fefc676d863", 3, 1);
-//    var loadWeather = setTimeout(function () {
-//        var weatherJson = getWeatherDetails(apiUrl, 3, 1);
-//    }, 2000);
-//});
-
-
-//function getGeoLocation(url, numberOfRuns, currentRun) {
-//    var geoLocation = GetCookie("geoLocation");
-//    if (geoLocation.length < 5) {
-//        if (currentRun <= numberOfRuns) {
-//            $.ajax({
-//                url: url,
-//                success: function (data) {
-//                    //todo insert to coockie
-//                    var geoLocation = {};
-//                    geoLocation.lat = data.latitude;
-//                    geoLocation.lon = data.longitude;
-
-//                    SetCookie("geoLocation", JSON.stringify(geoLocation), 20);
-//                    apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + data.latitude + "&lon=" + data.longitude + "&appid=c78c613799583afdf09dd8264d45ea20&units=imperial";
-//                },
-//                error: function (xhr, status, error) {
-//                    getGeoLocation(url, 3, 1);
-//                }
-//            });
-//        } else {
-//            console.log("ajax error");
-//        }
-//    } else {
-//        var geLocation = JSON.parse(geoLocation);
-//        apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + geLocation.lat + "&lon=" + geLocation.lon + "&appid=c78c613799583afdf09dd8264d45ea20&units=imperial";
-
-//    }
-//}
-
-////weather app
-//function getWeatherDetails(url, numberOfRuns, currentRun) {
-//    $.getJSON(url, function (data) {
-//        $("#city").html(data.name);
-//        $("#temp").html(data.main["temp"] + "<span class='c-ico'>&#8457;</span>");
-//        $("#date").html(formatDate(new Date()));
-//        $("#icon img").attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
-//    });
-
-//}
 
 
 
@@ -702,3 +878,4 @@ window.showSortMenu = (id, e) => {
     $("th").removeAttr("isOpen");
     $(e.currentTarget).attr("isOpen", "true");
 }
+*/
