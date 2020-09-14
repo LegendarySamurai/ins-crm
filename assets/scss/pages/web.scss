@@ -208,8 +208,12 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translate(-50%, 0);
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 8pt;
     margin-top: 20px;
-    white-space: nowrap;
+    //white-space: nowrap;
   }
 
   .menu-item-name {
@@ -643,6 +647,10 @@ body {
         i {
           margin-left: 10px;
           font-size: 10pt;
+        }
+
+        span {
+          margin-right: 5px;
         }
       }
     }

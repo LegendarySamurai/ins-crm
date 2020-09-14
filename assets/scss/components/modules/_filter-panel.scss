@@ -314,7 +314,8 @@ body ::-webkit-scrollbar-thumb {
 
   .status-bar {
     width: 300px;
-    padding: 3% 5%;
+    min-height: 100vh;
+    padding: 30px 15px 20px;
   }
 
   .open-filter-btn {
@@ -447,7 +448,7 @@ body ::-webkit-scrollbar-thumb {
       max-height: calc(100vh - 90px);
       overflow: hidden;
       overflow-y: auto;
-      padding: 2% 3%;
+      padding: 30px 15px 20px;
       background-color: #fafafa;
       transition: transform 400ms ease;
     }
