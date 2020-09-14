@@ -978,12 +978,12 @@ body {
 
   .status-bar-col.filter-closed + .leads-list-col .table-header-col {
     width: calc(100% - 220px - 50px - 4px);
-    padding-right: 30px;
+    padding-right: 20px;
   }
 
   .status-bar-col.filter-opened + .leads-list-col .table-header-col {
     width: calc(100% - 220px - 50px - 4px - 250px);
-    padding-right: 30px;
+    padding-right: 20px;
   }
 
   .table-body-col {
@@ -1016,6 +1016,7 @@ body {
     padding: 0 1%;
     background: #fff;
     //background: transparentize(coral, .6);
+    box-shadow: 0 4px 5px -1px rgba(0,0,0,0.16);
 
     .table-header-wrap {
       display: flex;
