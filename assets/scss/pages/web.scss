@@ -105,7 +105,7 @@ body {
   .menu-d-col {
     width: 100%;
     height: calc(100vh - 94px - 50px);
-    overflow-y: auto;
+    //overflow-y: auto;
   }
 
   .menu-container-d {
@@ -167,7 +167,7 @@ body {
         content: '';
         position: absolute;
         top: 0;
-        width: calc(100% + 20px);
+        width: calc(100% + 5px);
         right: 0;
         height: 100%;
         background-color: #ffffff;
@@ -585,7 +585,7 @@ body {
         align-items: center;
         height: 50px;
         padding-bottom: 10px;
-        background-color: #325181;
+        background-color: #e98303;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         color: #fff;
