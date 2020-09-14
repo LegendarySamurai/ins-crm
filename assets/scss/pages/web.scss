@@ -121,6 +121,7 @@ body {
   .menu-item-d {
     width: calc(100% - 20px);
     height: 46px;
+    margin-bottom: 2px;
     background-color: transparent;
 
     label {
@@ -975,6 +976,14 @@ body {
     margin-right: 1%;
   }
 
+  .status-bar-col.filter-closed + .leads-list-col .table-header-col {
+    width: calc(100% - 220px - 50px - 4px);
+  }
+
+  .status-bar-col.filter-opened + .leads-list-col .table-header-col {
+    width: calc(100% - 220px - 50px - 4px - 250px);
+  }
+
   // leads-list-section
   .leads-list-col {
     height: auto;
@@ -993,9 +1002,10 @@ body {
     position: fixed;
     top: 90px;
     left: 2px;
-    width: calc(100% - 220px - 50px - 4px);
+    //width: calc(100% - 220px - 50px - 4px);
     padding: 0 1%;
     background: #fff;
+    //background: transparentize(coral, .6);
 
     .table-header-wrap {
       display: flex;
