@@ -13,15 +13,14 @@
 @import '../components/modules/popover-custom';
 
 // utils
-@import '../components/utils/base';
 @import '../components/utils/colors';
-@import '../components/utils/fonts';
 @import '../components/utils/helpers';
-@import '../components/utils/reset-styles';
-@import '../components/utils/variables';
 
 body {
   direction: rtl;
+  text-align: right;
+  //font-family: 'Open Sans','Open Sans Hebrew';
+  font-family: 'Alef', sans-serif;
 
   &.blocked {
     overflow: hidden;
@@ -38,7 +37,6 @@ body {
 .layout-page {
   flex-grow: 1;
   display: flex;
-  font-family: "Raleway", sans-serif;
 
   .row-outer {
     position: relative;
@@ -453,7 +451,6 @@ body {
     height: 15px;
     border-radius: 50%;
     color: #325181;
-    font-family: "Lato", sans-serif;
     font-size: 8pt;
   }
 
@@ -593,7 +590,6 @@ body {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         color: #fff;
-        font-family: "Raleway", sans-serif;
         font-size: 12pt;
         font-weight: 700;
 
@@ -658,7 +654,7 @@ body {
 
   .dropdown-list-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: flex-start;
     padding-bottom: 2px;
 
@@ -690,8 +686,7 @@ body {
   .item-content {
     display: flex;
     flex-direction: column;
-    //justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
     width: auto;
     flex-grow: 1;
     margin-left: 6px;
@@ -704,10 +699,11 @@ body {
 
   .item-text {
     font-size: 10pt;
+    text-align: right;
   }
 
   .item-time {
-    align-self: flex-end;
+    align-self: flex-start;
     font-size: 9pt;
     color: #b3b3b3;
   }
@@ -1070,7 +1066,6 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     border-radius: 7px;
-    font-family: "Lato", sans-serif;
   }
 
   // Item

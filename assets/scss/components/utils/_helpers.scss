@@ -3,21 +3,61 @@
 
 $main-bg: #005186;
 $main-font-color: #325181;
+$main-orange: #e98303;
+$main-blue: #325181;
+$main-light-blue: #005186;
 
 html, body {
-  font-family: "Poppins", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 100%;
   background-color: #fff;
   box-sizing: border-box;
   color: #005186;
   font-size: 10pt;
 }
 
-textarea:focus, input:focus {
+html {
+  & ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  & ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  & ::-webkit-scrollbar-thumb {
+    background: #325181;
+  }
+
+  & ::-webkit-scrollbar-thumb:hover {
+    background: #b1ad84;
+  }
+}
+
+body {
+  & ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  & ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  & ::-webkit-scrollbar-thumb {
+    background: #325181;
+  }
+
+  & ::-webkit-scrollbar-thumb:hover {
+    background: #b1ad84;
+  }
+}
+
+textarea:focus,
+input:focus {
   outline: none;
 }
 
 select:focus {
-  outline-color: #005186;
+  outline: none;
 }
 
 option:disabled {
@@ -30,25 +70,91 @@ option:disabled {
 
 a {
   color: #325181;
+  text-decoration: none;
+
+  &:hover {
+    outline: none;
+    text-decoration: none;
+    color: #325181;
+  }
+
+  &:active {
+    outline: 0;
+    text-decoration: none;
+    color: #325181;
+  }
+
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+    color: #325181;
+  }
 }
 
-a:hover {
-  outline: 0;
-  text-decoration: none;
-  color: #325181;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-a:active {
-  outline: 0;
-  text-decoration: none;
-  color: #325181;
+button {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+
+  &:focus {
+    box-shadow: unset;
+    outline: none !important;
+  }
 }
 
-a:focus {
-  outline: 0;
-  text-decoration: none;
-  color: #325181;
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: initial;
 }
+
+[type="button"], [type="reset"], [type="submit"], button {
+  -webkit-appearance: none;
+}
+
+textarea:focus, input:focus, .checkbox {
+  outline: none !important;
+  border-color: inherit !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.custom-select:focus {
+  border: 1px solid #ced4da;
+  outline: none;
+  box-shadow: none;
+}
+
+.custom-control {
+  padding-left: 0;
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+  box-shadow: none !important;
+}
+
 
 app {
   display: flex;
@@ -57,28 +163,6 @@ app {
   box-sizing: border-box;
   min-height: 100vh;
 }
-
-.text-shadow {
-  text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black, 0 -0.03em black, -0.03em -0.03em black, -0.03em 0.03em black, 0.03em -0.03em black, 0.03em 0.05em black;
-}
-
-.text-primary {
-  color: #325181 !important;
-}
-
-// Font-family
-.font-arial {
-  font-family: "Arial", sans-serif;
-}
-
-.lato {
- font-family: "Lato","Ariel", sans-serif;
-}
-
-.anton {
-  font-family: "Anton","Ariel", sans-serif;
-}
-
 
 .overflow-hidden {
   overflow: hidden !important;
@@ -92,17 +176,119 @@ app {
   position: relative;
 }
 
-.sticky {
+.pos-sticky {
   position: sticky;
 }
 
-.margin-center {
-  margin: 0 auto;
+.cursor-p {
+  @media(min-width: 1200px) {
+    cursor: pointer;
+  }
 }
 
-.cursor-p {
-  cursor: pointer;
+// Display
+.d-above-600-none {
+  display: none !important;
+
+  @media(max-width: 599px) {
+    display: flex !important;
+  }
 }
+
+.d-above-768-none {
+  display: none !important;
+
+  @media(max-width: 767px) {
+    display: flex !important;
+  }
+}
+
+.d-above-600-flex {
+  display: flex !important;
+
+  @media(max-width: 599px) {
+    display: none !important;
+  }
+}
+
+.d-above-768-flex {
+  display: flex !important;
+
+  @media(max-width: 767px) {
+    display: none !important;
+  }
+}
+
+
+.d-600-none {
+  display: flex !important;
+
+  @media(max-width: 599px) {
+    display: none !important;
+  }
+}
+
+.d-600-flex {
+  display: none !important;
+
+  @media(max-width: 599px) {
+    display: flex !important;
+  }
+}
+
+.mobile-only-flex {
+  @media(max-width: 599px) {
+    display: flex;
+  }
+  @media(min-width: 600px) {
+    display: none;
+  }
+}
+
+.mobile-only-block {
+  @media(max-width: 599px) {
+    display: block;
+  }
+  @media(min-width: 600px) {
+    display: none;
+  }
+}
+
+.desktop-only-flex {
+  @media(max-width: 599px) {
+    display: none;
+  }
+  @media(min-width: 600px) {
+    display: flex;
+  }
+}
+
+.desktop-only-block {
+  @media(max-width: 599px) {
+    display: none;
+  }
+  @media(min-width: 600px) {
+    display: block;
+  }
+}
+
+// For input and select not to zoom on focus on mobile ios
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  textarea,
+  input {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 1rem;
+  }
+}
+
 
 // ******************************//
 
