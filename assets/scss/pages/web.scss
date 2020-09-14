@@ -1151,7 +1151,7 @@ body {
           will-change: transform;
           top: 0px;
           left: 0px;
-          transform: translate3d(0px, 36px, 0px);
+          transform: translate3d(0px, 36px, 0px) !important;
 
           &:after {
             display: none;
@@ -1189,7 +1189,7 @@ body {
           flex-direction: row;
           justify-content: flex-start;
           align-items: center;
-          padding: 1rem !important;
+          padding: 1rem;
           color: #585077;
           white-space: nowrap;
           -ms-text-overflow: ellipsis;
